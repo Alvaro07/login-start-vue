@@ -35,6 +35,7 @@ export default {
             .login(doc.data().email, data.password)
             .then(() => {
               this.loading = false;
+              this.$store.commit("setAuth", true);
               this.$router.push("/");
             })
             .catch(error => {

@@ -5,7 +5,6 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    auth: false,
     user: {
       name: null,
       email: null
@@ -17,12 +16,6 @@ export default new Vuex.Store({
     },
     setAuth: (state, auth) => {
       state.auth = auth
-    }
-  },
-
-  getters: {
-    getAuth: state => {
-      return state.auth
     }
   }
 })
