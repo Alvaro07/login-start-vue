@@ -19,7 +19,7 @@
         v-if="type === 'register'"
         type="text"
         extraClass="margin-top-10"
-        placeholder="User name"
+        placeholder="Email"
         v-model="email"
       />
 
@@ -37,6 +37,9 @@
         <router-link v-if="type === 'register'" to="/login">Login</router-link>
         <Button v-if="type === 'register'" text="Register" @onClick="handleSubmit" />
       </div>
+
+      <p v-if="error.length > 0" class="user-form__error">{{ error }}</p>
+      <p v-if="loading" class="user-form__loading">Cargando...</p>
     </form>
   </section>
 </template>
@@ -51,7 +54,7 @@ export default {
     InputField,
     Button
   },
-  props: ["title", "description", "type", "submitForm"],
+  props: ["title", "description", "type", "submitForm", "error", "loading"],
   data() {
     return {
       userName: "",
@@ -63,7 +66,7 @@ export default {
     handleSubmit() {
       this.$emit("onSubmit", {
         email: this.email,
-        userName: this.useName,
+        userName: this.userName,
         password: this.password
       });
     }
