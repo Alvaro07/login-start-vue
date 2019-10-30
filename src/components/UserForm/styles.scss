@@ -3,7 +3,7 @@
 */
 
 .user-form {
-  padding: 30px;
+  padding: 30px 30px 20px 30px;
   background-color: white;
   width: 100%;
   max-width: 400px;
@@ -31,5 +31,12 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 20px;
+  }
+
+  &__error {
+    color: tomato;
+    font-size: 1.4rem;
+    text-align: center;
+    padding-top: 10px;
   }
 }
