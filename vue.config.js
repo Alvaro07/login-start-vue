@@ -1,12 +1,10 @@
 module.exports = {
+  publicPath: 'login-start-vue',
   css: {
     loaderOptions: {
       sass: {
-        prependData: `
-        @import "~@/styles/settings/variables.scss"; 
-        @import "~@/styles/settings/mixins.scss"
-        `
+        prependData: '@import "src/styles/settings/_variables.scss";'
       }
     }
   }
-};
+}

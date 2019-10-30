@@ -39,7 +39,7 @@
       </div>
 
       <p v-if="error.length > 0" class="user-form__error">{{ error }}</p>
-      <p v-if="loading" class="user-form__loading">Cargando...</p>
+      <Loader v-if="loading" />
     </form>
   </section>
 </template>
@@ -47,12 +47,14 @@
 <script>
 import InputField from "../InputField";
 import Button from "../Button";
+import Loader from "../Loader";
 
 export default {
   name: "UserForm",
   components: {
     InputField,
-    Button
+    Button,
+    Loader
   },
   props: ["title", "description", "type", "submitForm", "error", "loading"],
   data() {
