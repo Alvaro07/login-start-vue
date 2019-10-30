@@ -3,7 +3,7 @@
     title="Login with Firebase"
     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam leo diam, scelerisque a eleifend sed."
     type="login"
-    :submitForm="data => handleSubmit(data)"
+    @onSubmit="data => handleSubmit(data)"
   />
 </template>
 

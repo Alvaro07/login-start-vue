@@ -1,11 +1,16 @@
 <template>
-  <button class="c-button">{{ text }}</button>
+  <button class="c-button" @click.prevent="e => onButtonClick(e)">{{ text }}</button>
 </template>
 
 <script>
 export default {
   name: "Button",
-  props: ["text"]
+  props: ["text"],
+  methods: {
+    onButtonClick(e) {
+      this.$emit("onClick");
+    }
+  }
 };
 </script>
 
