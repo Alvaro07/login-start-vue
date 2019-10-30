@@ -1,0 +1,19 @@
+/**
+* Button component
+*/
+
+.c-button {
+  padding: 7px 20px;
+  background-color: $darkYellow;
+  color: white;
+  font-weight: 700;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 0.3s all ease;
+
+  &:hover {
+    background-color: $orange;
+  }
+}
