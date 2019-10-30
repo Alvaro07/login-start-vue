@@ -1,6 +1,6 @@
 <template>
   <section class="user-form">
-    <form @submit.prevent="handleSubmit({ userName, password, email })">
+    <form>
       <h2 class="user-form__title">
         <img src="@/assets/logo-firebase.png" width="35" alt="Firebase logo" />
         {{ title }}
@@ -32,10 +32,10 @@
 
       <div class="user-form__footer">
         <router-link v-if="type === 'login'" to="/register">Register</router-link>
-        <Button v-if="type === 'login'" text="Sign in" />
+        <Button v-if="type === 'login'" text="Sign in" @onClick="handleSubmit" />
 
         <router-link v-if="type === 'register'" to="/login">Login</router-link>
-        <Button v-if="type === 'register'" text="Register" />
+        <Button v-if="type === 'register'" text="Register" @onClick="handleSubmit" />
       </div>
     </form>
   </section>
@@ -60,8 +60,12 @@ export default {
     };
   },
   methods: {
-    handleSubmit(data) {
-      this.submitForm(data);
+    handleSubmit() {
+      this.$emit("onSubmit", {
+        email: this.email,
+        userName: this.useName,
+        password: this.password
+      });
     }
   }
 };
