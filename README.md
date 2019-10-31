@@ -1,29 +1,11 @@
-# login-start-vue
+# Login-start-vue
 
-## Project setup
-```
-npm install
-```
+A starter kit to authenticate developed with Firebase + Vue
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+--
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Link: [alvaro07.github.io/login-start-vue/](https://alvaro07.github.io/login-start-vue/)
 
-### Run your tests
-```
-npm run test
-```
+---
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![Login with Firebase and Vue](loginFirebaseVue.jpg "login")
