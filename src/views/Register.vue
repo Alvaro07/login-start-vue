@@ -26,8 +26,18 @@ export default {
   },
   methods: {
     handleSubmit(data) {
-      this.loading = true;
       this.error = "";
+
+      if (
+        data.userName.length === 0 ||
+        data.password.length === 0 ||
+        data.email.length === 0
+      ) {
+        this.error = "Complete all fields";
+        return;
+      }
+
+      this.loading = true;
 
       firebase.userExists(data.userName).then(doc => {
         if (doc.exists) {
