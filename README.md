@@ -8,4 +8,4 @@ Link: [alvaro07.github.io/login-start-vue/](https://alvaro07.github.io/login-sta
 
 ---
 
-![Login with Firebase and Vue](loginFirebaseVue.jpg "login")
+![Login with Firebase and Vue](loginFirebaseVue.png "login")
