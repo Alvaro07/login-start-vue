@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/login-start-vue/precache-manifest.9bb5cf0ff9739a4ffb5a06ff70a7f9b3.js"
+  "/login-start-vue/precache-manifest.50e1ce4b70f85b6755a1696400552113.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "login-start-vue"});

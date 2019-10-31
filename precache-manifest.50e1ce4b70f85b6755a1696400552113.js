@@ -4,7 +4,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/login-start-vue/404.html"
   },
   {
-    "revision": "3fd3a2545e05877fc26d",
+    "revision": "4ab4fafb81d0235bd3cf",
     "url": "/login-start-vue/css/app.e805fc3e.css"
   },
   {
@@ -12,12 +12,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/login-start-vue/img/logo-firebase.ce753b28.png"
   },
   {
-    "revision": "0dab2e08939b65886cb30a568b06bcd6",
+    "revision": "8af881f2d805491d770bd3934acf9322",
     "url": "/login-start-vue/index.html"
   },
   {
-    "revision": "3fd3a2545e05877fc26d",
-    "url": "/login-start-vue/js/app.37012745.js"
+    "revision": "4ab4fafb81d0235bd3cf",
+    "url": "/login-start-vue/js/app.9b184158.js"
   },
   {
     "revision": "744c10bd72a00815f5df",
