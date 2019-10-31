@@ -27,6 +27,7 @@ export default {
   methods: {
     handleSubmit(data) {
       this.loading = true;
+      this.error = "";
 
       firebase.userExists(data.userName).then(doc => {
         if (doc.exists) {
@@ -35,12 +36,16 @@ export default {
           firebase
             .register(data.email, data.password, data.userName)
             .then(() => {
+              this.$store.commit("addUser", {
+                name: data.userName,
+                email: data.email
+              });
               this.loading = false;
               this.$router.push("/");
             })
             .catch(error => {
-              this.loading = false;
               this.error = error.message;
+              this.loading = false;
             });
         }
       });
