@@ -34,13 +34,16 @@ export default {
           firebase
             .login(doc.data().email, data.password)
             .then(() => {
+              this.$store.commit("addUser", {
+                name: data.userName,
+                email: doc.data().email
+              });
               this.loading = false;
-              this.$store.commit("setAuth", true);
               this.$router.push("/");
             })
             .catch(error => {
-              this.loading = false;
               this.error = error.message;
+              this.loading = false;
             });
         } else {
           this.error = "The user not exists";

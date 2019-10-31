@@ -1,21 +1,27 @@
 <template>
-  <Button text="Log Out" @onClick="handleClick" />
+  <Card />
 </template>
 
 <script>
 import firebase from "../components/firebase";
-import Button from "../components/Button";
+import Card from "../components/Card";
+import { mapState } from "vuex";
 
 export default {
   name: "home",
   components: {
-    Button
+    Card
   },
-  methods: {
-    handleClick() {
-      firebase.logout();
-      this.$router.push("login");
+  created() {
+    if (!this.user.name) {
+      firebase.getUser().then(data =>
+        this.$store.commit("addUser", {
+          name: data.displayName,
+          email: data.email
+        })
+      );
     }
-  }
+  },
+  computed: mapState(["user"])
 };
 </script>

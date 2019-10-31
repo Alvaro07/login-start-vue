@@ -14,8 +14,8 @@ export default new Vuex.Store({
     addUser: (state, data) => {
       state.user = { name: data.name, email: data.email }
     },
-    setAuth: (state, auth) => {
-      state.auth = auth
+    removeUser: (state) => {
+      state.user = { name: null, email: null }
     }
   }
 })
