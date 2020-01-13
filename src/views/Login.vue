@@ -11,7 +11,9 @@
 
 <script>
 import UserForm from "@/components/UserForm";
-import firebase from "@/components/firebase";
+import firebase from '@/firebase'
+import { mapActions } from 'vuex'
+import axios from '../axios-auth'
 
 export default {
   name: "login",
@@ -25,6 +27,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(['addUser']),
     handleSubmit(data) {
       this.error = "";
 
@@ -32,18 +35,18 @@ export default {
         this.error = "Complete all fields";
         return;
       }
-
       this.loading = true;
 
       firebase.userExists(data.userName).then(doc => {
         if (doc.exists) {
           firebase
-            .login(doc.data().email, data.password)
+            axios.post('/verifyPassword?key=AIzaSyAE_4rAo3jQ-nIynUYWbDy1SJOdfCYWOV0', {
+              email: doc.data().email,
+              password: data.password,
+              returnSecureToken: true
+            })
             .then(() => {
-              this.$store.commit("addUser", {
-                name: data.userName,
-                email: doc.data().email
-              });
+              this.addUser({name: data.userName, email: doc.data().email });
               this.loading = false;
               this.$router.push("/");
             })

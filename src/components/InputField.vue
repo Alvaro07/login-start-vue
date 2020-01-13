@@ -29,5 +29,20 @@ export default {
 </script>
 
 <style lang="scss" >
-@import "./styles";
+/**
+* Input component
+*/
+
+.c-input-wrap {
+  width: 100%;
+}
+
+.c-input-field {
+  width: 100%;
+  border: 1px solid Gainsboro;
+  padding: 10px 15px;
+  color: #333;
+  border-radius: 3px;
+}
+
 </style>

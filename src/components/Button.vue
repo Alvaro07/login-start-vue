@@ -15,5 +15,20 @@ export default {
 </script>
 
 <style lang="scss" >
-@import "./styles";
+.c-button {
+  padding: 5px 15px;
+  background-color: $darkYellow;
+  color: white;
+  font-weight: 700;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s all ease;
+
+  &:hover {
+    background-color: $orange;
+  }
+}
+
 </style>

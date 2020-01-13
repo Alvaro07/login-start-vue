@@ -11,7 +11,9 @@
 
 <script>
 import UserForm from "@/components/UserForm";
-import firebase from "@/components/firebase";
+import firebase from '@/firebase'
+import axios from '../axios-auth.js'
+import { mapActions } from 'vuex'
 
 export default {
   name: "register",
@@ -25,6 +27,7 @@ export default {
     };
   },
   methods: {
+    ...mapActions(['addUser']),
     handleSubmit(data) {
       this.error = "";
 
@@ -43,20 +46,20 @@ export default {
         if (doc.exists) {
           this.error = "the user already exists";
         } else {
-          firebase
-            .register(data.email, data.password, data.userName)
-            .then(() => {
-              this.$store.commit("addUser", {
-                name: data.userName,
-                email: data.email
-              });
-              this.loading = false;
-              this.$router.push("/");
-            })
-            .catch(error => {
-              this.error = error.message;
-              this.loading = false;
-            });
+          axios.post('/signupNewUser?key=AIzaSyAE_4rAo3jQ-nIynUYWbDy1SJOdfCYWOV0', {
+            email: data.email,
+            password: data.password,
+            returnSecureToken: true
+          })
+        .then(() => {
+            this.addUser({ name: data.userName, email: data.email })
+            this.loading = false;
+            this.$router.push("/");
+          })
+          .catch(error => {
+            this.error = error.message;
+            this.loading = false;
+          });
         }
       });
     }

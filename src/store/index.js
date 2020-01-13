@@ -11,11 +11,19 @@ export default new Vuex.Store({
     }
   },
   mutations: {
-    addUser: (state, data) => {
+    'ADD_USER' (state, data) {
       state.user = { name: data.name, email: data.email }
     },
-    removeUser: (state) => {
+    'REMOVE_USER' (state) {
       state.user = { name: null, email: null }
+    }
+  },
+  actions: {
+    removeUser ({ commit }) {
+      commit('REMOVE_USER')
+    },
+    addUser ({ commit }, payload) {
+      commit('ADD_USER', payload)
     }
   }
 })

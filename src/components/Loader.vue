@@ -1,6 +1,16 @@
-/**
-  * Loader component
-  */
+<template>
+  <div class="c-loader">
+    <div class="c-loader__item"></div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Loader"
+};
+</script>
+
+<style lang="scss">
 
 .c-loader {
   display: flex;
@@ -88,3 +98,5 @@
     transform: rotate(360deg);
   }
 }
+
+</style>
